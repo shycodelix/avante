@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { canonicalPath } from "@/lib/site";
+import { allowedValue, canonicalPath, openGraphBase } from "@/lib/site";
 
 import { ArticleCard } from "@/components/article-card";
 import { FilterBar } from "@/components/filter-bar";
@@ -20,9 +20,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const params = await searchParams;
   const canonical = canonicalPath("/news", {
-    category: params.category,
-    title: params.title,
-    sort: params.sort,
+    category: allowedValue(
+      params.category,
+      getArticleCategories().map((category) => category.value),
+    ),
+    title: allowedValue(params.title, getTitles().map((title) => title.id)),
+    // Newest is the default ordering, so only the alternate one earns a URL.
+    sort: allowedValue(params.sort, ["trending"] as const),
   });
 
   return {
@@ -30,7 +34,7 @@ export async function generateMetadata({
     description:
       "Every story from the Avante desk, newest first: league news, reports, interviews, features, guides and gaming & tech coverage.",
     alternates: { canonical },
-    openGraph: { url: canonical },
+    openGraph: openGraphBase(canonical),
   };
 }
 

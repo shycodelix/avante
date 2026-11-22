@@ -6,13 +6,14 @@ import { CosplayGallery } from "@/components/cosplay-gallery";
 import { PageHeader } from "@/components/page-header";
 import { SectionHeading } from "@/components/section-heading";
 import { getCosplay, getEvents } from "@/lib/content";
+import { openGraphBase } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Cosplay",
   description:
     "Builds, makers and studio shoots: Avante documents cosplay as production, not costume.",
   alternates: { canonical: "/cosplay" },
-  openGraph: { url: "/cosplay" },
+  openGraph: openGraphBase("/cosplay"),
 };
 
 export const revalidate = 600;

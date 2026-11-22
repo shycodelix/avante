@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { canonicalPath } from "@/lib/site";
+import { allowedValue, canonicalPath, openGraphBase } from "@/lib/site";
 
 import { FilterBar } from "@/components/filter-bar";
 import { MatchCard } from "@/components/match-card";
@@ -20,8 +20,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const params = await searchParams;
   const canonical = canonicalPath("/matches", {
-    title: params.title,
-    status: params.status,
+    title: allowedValue(params.title, getTitles().map((title) => title.id)),
+    status: allowedValue(params.status, ["live", "upcoming", "completed"] as const),
   });
 
   return {
@@ -29,7 +29,7 @@ export async function generateMetadata({
     description:
       "Live scores, upcoming fixtures and recent results across League of Legends, VALORANT, CS2, Rocket League, Dota 2 and Tekken 8.",
     alternates: { canonical },
-    openGraph: { url: canonical },
+    openGraph: openGraphBase(canonical),
   };
 }
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { canonicalPath } from "@/lib/site";
+import { allowedValue, canonicalPath, openGraphBase } from "@/lib/site";
 
 import { EventList } from "@/components/event-list";
 import { FilterBar } from "@/components/filter-bar";
@@ -15,8 +15,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const params = await searchParams;
   const canonical = canonicalPath("/events", {
-    format: params.format,
-    title: params.title,
+    format: allowedValue(params.format, ["lan", "online", "hybrid"] as const),
+    title: allowedValue(params.title, getTitles().map((title) => title.id)),
   });
 
   return {
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       "LANs, online cups, studio nights and build evenings: the Avante events calendar across every title we cover.",
     alternates: { canonical },
-    openGraph: { url: canonical },
+    openGraph: openGraphBase(canonical),
   };
 }
 

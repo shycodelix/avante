@@ -4,13 +4,14 @@ import Link from "next/link";
 import { ArticleCard } from "@/components/article-card";
 import { PageHeader } from "@/components/page-header";
 import { getArticles } from "@/lib/content";
+import { openGraphBase } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Gaming & tech",
   description:
     "Hardware, patches, agent design and the decisions that change how competitive games are played.",
   alternates: { canonical: "/gaming-tech" },
-  openGraph: { url: "/gaming-tech" },
+  openGraph: openGraphBase("/gaming-tech"),
 };
 
 export const revalidate = 300;

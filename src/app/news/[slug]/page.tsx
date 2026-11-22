@@ -12,6 +12,7 @@ import {
   getTitle,
 } from "@/lib/content";
 import { formatDate } from "@/lib/format";
+import { openGraphBase } from "@/lib/site";
 
 export const revalidate = 300;
 
@@ -37,8 +38,7 @@ export async function generateMetadata({
     description: article.dek,
     alternates: { canonical },
     openGraph: {
-      type: "article",
-      url: canonical,
+      ...openGraphBase(canonical, "article"),
       title: article.title,
       description: article.dek,
       publishedTime: article.publishedAt,

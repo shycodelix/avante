@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { canonicalPath } from "@/lib/site";
+import { canonicalPath, openGraphBase } from "@/lib/site";
 
 import { ArticleCard } from "@/components/article-card";
 import { MatchCard } from "@/components/match-card";
@@ -23,14 +23,17 @@ export async function generateMetadata({
   searchParams: Promise<{ league?: string }>;
 }): Promise<Metadata> {
   const params = await searchParams;
-  const canonical = canonicalPath("/leagues", { league: params.league });
+  // An unknown league falls back to the first circuit on the page, so it must
+  // not claim a canonical URL of its own.
+  const league = params.league ? await getLeague(params.league) : undefined;
+  const canonical = canonicalPath("/leagues", { league: league?.id });
 
   return {
     title: "Leagues & standings",
     description:
       "Standings, formats and season context for the LCP, LCK, VCT Pacific, VCT Americas, ESL Pro League and RLCS APAC.",
     alternates: { canonical },
-    openGraph: { url: canonical },
+    openGraph: openGraphBase(canonical),
   };
 }
 

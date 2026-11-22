@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { canonicalPath } from "@/lib/site";
+import { allowedValue, canonicalPath, openGraphBase } from "@/lib/site";
 
 import { FilterBar } from "@/components/filter-bar";
 import { PageHeader } from "@/components/page-header";
@@ -24,8 +24,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const params = await searchParams;
   const canonical = canonicalPath("/transfers", {
-    title: params.title,
-    status: params.status,
+    title: allowedValue(params.title, getTitles().map((title) => title.id)),
+    status: allowedValue(params.status, ["confirmed", "report", "rumour"] as const),
   });
 
   return {
@@ -33,7 +33,7 @@ export async function generateMetadata({
     description:
       "Confirmed signings, reported agreements and rumours across League of Legends, VALORANT, CS2 and Rocket League — labelled by status.",
     alternates: { canonical },
-    openGraph: { url: canonical },
+    openGraph: openGraphBase(canonical),
   };
 }
 

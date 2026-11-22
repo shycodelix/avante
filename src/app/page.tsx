@@ -9,6 +9,7 @@ import { ParallaxMedia } from "@/components/parallax-media";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { StatusBadge } from "@/components/status-badge";
+import { openGraphBase } from "@/lib/site";
 import {
   getArticles,
   getBrand,
@@ -30,7 +31,7 @@ import type { StudioProject } from "@/lib/types";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
-  openGraph: { url: "/" },
+  openGraph: openGraphBase("/"),
 };
 
 export const revalidate = 300;
