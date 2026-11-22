@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { getLiveMatches } from "@/lib/content";
+import { SITE_URL } from "@/lib/site";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ const sans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://avante.gg"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Avante Esports — Organisation & Creative Studio",
     template: "%s · Avante Esports",
