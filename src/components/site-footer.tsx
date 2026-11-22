@@ -1,22 +1,21 @@
 import Link from "next/link";
 
-import { getHubs } from "@/lib/content";
+import { SocialLinks } from "@/components/social-links";
+import { getBrand, getHubs, getSocials } from "@/lib/content";
 
 const STUDIO_LINKS = [
+  { href: "/#what-we-do", label: "What we do" },
   { href: "/#studio", label: "Studio work" },
   { href: "/#talent", label: "Rosters" },
   { href: "/#contact", label: "Start a project" },
 ];
 
-const SOCIAL_LINKS = [
-  { href: "https://twitch.tv/avante", label: "Twitch" },
-  { href: "https://youtube.com/@avante", label: "YouTube" },
-  { href: "https://instagram.com/avante.gg", label: "Instagram" },
-  { href: "https://x.com/avante_gg", label: "X" },
-];
-
 export async function SiteFooter() {
-  const hubs = await getHubs();
+  const [hubs, socials, brand] = await Promise.all([
+    getHubs(),
+    Promise.resolve(getSocials()),
+    Promise.resolve(getBrand()),
+  ]);
 
   return (
     <footer className="relative overflow-hidden border-t border-bone/10 bg-ink">
@@ -29,9 +28,11 @@ export async function SiteFooter() {
               </span>
               <span className="mb-[3px] block h-2 w-2 bg-cobalt" aria-hidden />
             </Link>
-            <p className="mt-5 max-w-sm text-[13px] leading-relaxed text-bone/50">
-              An esports organisation and a creative studio. Four rosters, one
-              broadcast desk, and a newsroom covering the scene from Berlin.
+            <p className="mt-5 max-w-sm font-display text-[15px] leading-snug tracking-[-0.02em] text-bone/85">
+              {brand.tagline}
+            </p>
+            <p className="mt-3 max-w-sm text-[13px] leading-relaxed text-bone/50">
+              {brand.intro}
             </p>
             <a
               href="mailto:studio@avante.gg"
@@ -58,7 +59,7 @@ export async function SiteFooter() {
           </div>
 
           <div className="md:col-span-3">
-            <h2 className="text-[10px] tracking-[0.02em] text-bone/35">Studio</h2>
+            <h2 className="text-[10px] tracking-[0.02em] text-bone/35">Up close</h2>
             <ul className="mt-4 space-y-2">
               {STUDIO_LINKS.map((link) => (
                 <li key={link.href}>
@@ -75,26 +76,18 @@ export async function SiteFooter() {
             <h2 className="mt-8 text-[10px] tracking-[0.02em] text-bone/35">
               Follow
             </h2>
-            <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-              {SOCIAL_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[13px] text-bone/60 transition-colors hover:text-bone"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <SocialLinks
+              links={socials}
+              variant="text"
+              className="mt-4 text-[13px] text-bone/60"
+            />
+            <p className="mt-2 text-[11px] text-bone/35">{socials[0]?.handle}</p>
           </div>
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-between gap-3 border-t border-bone/10 py-6 text-[11px] text-bone/35">
           <p>© 2026 Avante Esports. All rights reserved.</p>
-          <p>Berlin · São Paulo · Seoul</p>
+          <p>{brand.location} · est. {brand.founded}</p>
         </div>
       </div>
 

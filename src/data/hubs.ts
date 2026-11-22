@@ -53,7 +53,7 @@ export const hubs: HubSeed[] = [
     href: "/events",
     name: "Events",
     description:
-      "LANs, online cups and studio nights on one calendar, from Berlin outward.",
+      "LANs, online cups and watch parties on one calendar, from Cebu outward.",
     unit: "dates",
   },
   {

@@ -155,7 +155,7 @@ export default async function CosplayPage() {
             <p className="mt-4 text-[11px] text-bone/35">
               {craftNight
                 ? `${craftNight.venue} · ${craftNight.city} · ${craftNight.startDate}`
-                : "Berlin · dates on the events desk"}
+                : "Cebu · dates on the events desk"}
             </p>
           </div>
           <Link

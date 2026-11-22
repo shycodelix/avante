@@ -3,7 +3,7 @@
  * timezone. Pinning the timezone keeps server output and client hydration
  * identical — never format with the visitor's locale here.
  */
-const TIME_ZONE = "Europe/Berlin";
+const TIME_ZONE = "Asia/Manila";
 const LOCALE = "en-GB";
 
 const dayMonth = new Intl.DateTimeFormat(LOCALE, {

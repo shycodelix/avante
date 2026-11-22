@@ -1,4 +1,5 @@
 import { articles as articleSeed } from "@/data/articles";
+import { brand, pillars, socials, values } from "@/data/brand";
 import { titles, teams, teamById, titleById } from "@/data/catalogue";
 import { cosplayEntries, events as eventSeed } from "@/data/culture";
 import { hubs as hubSeed } from "@/data/hubs";
@@ -9,6 +10,8 @@ import { rosterSnapshots, transfers as transferSeed } from "@/data/transfers";
 import type {
   Article,
   ArticleCategory,
+  Brand,
+  BrandValue,
   CosplayEntry,
   EventFormat,
   EventItem,
@@ -26,6 +29,8 @@ import type {
   Transfer,
   TransferStatus,
   Capability,
+  Pillar,
+  SocialLink,
 } from "@/lib/types";
 
 /**
@@ -359,6 +364,24 @@ export async function getUpcomingEvents(limit = 3): Promise<EventItem[]> {
 
 export async function getStudioProjects(): Promise<StudioProject[]> {
   return studioProjects;
+}
+
+// ── Brand ──────────────────────────────────────────────────────────────────
+
+export function getBrand(): Brand {
+  return brand;
+}
+
+export function getPillars(): Pillar[] {
+  return pillars;
+}
+
+export function getValues(): BrandValue[] {
+  return values;
+}
+
+export function getSocials(): SocialLink[] {
+  return socials;
 }
 
 // ── Hubs ───────────────────────────────────────────────────────────────────

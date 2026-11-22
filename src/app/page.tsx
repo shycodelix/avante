@@ -10,16 +10,19 @@ import { SectionHeading } from "@/components/section-heading";
 import { StatusBadge } from "@/components/status-badge";
 import {
   getArticles,
+  getBrand,
   getCapabilities,
   getCosplay,
   getHubs,
   getLiveMatches,
+  getPillars,
   getStudioProjects,
   getTalent,
   getTeam,
   getTitles,
   getUpcomingEvents,
   getUpcomingMatches,
+  getValues,
 } from "@/lib/content";
 import { formatDateRange, formatKickoff } from "@/lib/format";
 import type { StudioProject } from "@/lib/types";
@@ -77,6 +80,9 @@ export default async function HomePage() {
     talent,
     cosplay,
     titles,
+    brand,
+    pillars,
+    values,
   ] = await Promise.all([
     getArticles(),
     getLiveMatches(),
@@ -88,6 +94,9 @@ export default async function HomePage() {
     getTalent(),
     getCosplay(),
     getTitles(),
+    getBrand(),
+    getPillars(),
+    getValues(),
   ]);
 
   const lead = articles.find((article) => article.featured) ?? articles[0];
@@ -122,9 +131,9 @@ export default async function HomePage() {
           <div className="hero-fade flex flex-wrap items-center justify-between gap-3 text-[11px] text-bone/55">
             <span className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 bg-cobalt" aria-hidden />
-              Esports organisation & creative studio
+              Cebu-born esports media house
             </span>
-            <span className="text-bone/35">Berlin · Since 2019</span>
+            <span className="text-bone/35">Cebu · Philippines · est. 2019</span>
           </div>
 
           <div>
@@ -137,7 +146,7 @@ export default async function HomePage() {
             <div className="mt-7 grid gap-8 md:grid-cols-12 md:items-end">
               <div className="hero-fade md:col-span-7" style={{ animationDelay: "160ms" }}>
                 <p className="max-w-xl font-display text-[clamp(1.25rem,2.1vw,1.9rem)] leading-[1.06] tracking-[-0.035em] text-bone">
-                  We field the teams — and build the rooms they are watched in.
+                  {brand.tagline}
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <Link
@@ -163,10 +172,7 @@ export default async function HomePage() {
                 style={{ animationDelay: "260ms" }}
               >
                 <p className="text-[13px] leading-relaxed text-bone/60">
-                  Four rosters, one broadcast desk, and a newsroom covering six
-                  titles. We compete in League of Legends, VALORANT, CS2 and
-                  Rocket League — and we document the rest of the scene, from
-                  transfer scoops to cosplay builds.
+                  {brand.whoWeAre}
                 </p>
               </div>
             </div>
@@ -213,12 +219,66 @@ export default async function HomePage() {
         </div>
       </div>
 
+      {/* ── What we do ───────────────────────────────────────────────────── */}
+      <section id="what-we-do" className="wrap scroll-mt-24 py-20 md:py-28">
+        <SectionHeading
+          eyebrow="What we do"
+          title="Four pillars, one platform"
+          description={brand.intro}
+        />
+
+        <Reveal stagger={0.06} className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          {pillars.map((pillar, index) => (
+            <article key={pillar.id} className="border-t border-bone/15 pt-5">
+              <span className="text-[10px] text-bone/30 tnum">0{index + 1}</span>
+              <h3 className="mt-3 font-display text-[1.35rem] leading-none tracking-[-0.03em] text-bone">
+                {pillar.name}
+              </h3>
+              <p className="mt-2 text-[12px] text-cobalt">{pillar.lead}</p>
+              <p className="mt-3 text-[12px] leading-relaxed text-bone/50">
+                {pillar.summary}
+              </p>
+              <ul className="mt-4 space-y-1 border-t border-bone/10 pt-3 text-[11px] text-bone/35">
+                {pillar.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </Reveal>
+
+        <div className="mt-16 grid gap-10 border-t border-bone/15 pt-10 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="text-[10px] text-bone/35">Vision</p>
+            <p className="mt-3 text-[13px] leading-relaxed text-bone/70">{brand.vision}</p>
+          </div>
+          <div className="md:col-span-4">
+            <p className="text-[10px] text-bone/35">Mission</p>
+            <p className="mt-3 text-[13px] leading-relaxed text-bone/70">{brand.mission}</p>
+          </div>
+          <div className="md:col-span-4">
+            <p className="text-[10px] text-bone/35">Built on</p>
+            <ul className="mt-3 space-y-2">
+              {values.map((value) => (
+                <li key={value.id} className="text-[12px] leading-relaxed text-bone/55">
+                  <span className="text-bone">{value.name}.</span> {value.summary}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <p className="mt-10 max-w-3xl border-l-2 border-cobalt pl-5 font-display text-[clamp(1.2rem,2vw,1.6rem)] leading-[1.15] tracking-[-0.03em] text-bone/85">
+          {brand.belief}
+        </p>
+      </section>
+
       {/* ── Newsroom ─────────────────────────────────────────────────────── */}
       <section className="wrap py-20 md:py-28">
         <SectionHeading
           eyebrow="The wire"
           title="Dispatches from the desk"
-          description="Reported, confirmed, or clearly labelled as a rumour. The newsroom runs through the day from Berlin, with reporting across every title we cover."
+          description="Reported, confirmed, or clearly labelled as a rumour. The newsroom runs from Cebu, covering the Philippine scene and every title we follow."
           action={{ href: "/news", label: "All stories" }}
         />
 
@@ -252,8 +312,8 @@ export default async function HomePage() {
             <div className="lg:col-span-4">
               <p className="max-w-md text-sm leading-relaxed text-bone/60">
                 The studio started as the org&apos;s internal graphics desk in
-                2020. It now ships season-long systems for three leagues and
-                documents the scene we compete in. Same team, same room, same
+                Cebu and now ships season-long systems for circuits, teams and
+                creators across the Philippines. Same team, same room, same
                 deadline as the broadcast.
               </p>
 
@@ -289,7 +349,7 @@ export default async function HomePage() {
         <SectionHeading
           eyebrow="Rosters"
           title="The people on the stage"
-          description="Four lineups, one academy pipeline. Contract news lands on the transfers desk the moment it is signed — or earlier, if we can stand it up."
+          description="Competitive programmes built from the grassroots up, with an academy pipeline feeding every roster. Contract news lands on the transfers desk the moment it is signed."
           action={{ href: "/transfers", label: "Transfer tracker" }}
         />
 
@@ -452,7 +512,7 @@ export default async function HomePage() {
         </div>
 
         <p className="mt-6 text-[11px] text-bone/35">
-          All times CET. Broadcast links and brackets live on the matches desk.
+          All times PHT. Broadcast links and brackets live on the matches desk.
         </p>
       </section>
 
@@ -490,7 +550,7 @@ export default async function HomePage() {
               </div>
               <div>
                 <dt className="text-bone/35">Studio</dt>
-                <dd className="mt-1 text-bone/70">Kreuzberg, Berlin</dd>
+                <dd className="mt-1 text-bone/70">Cebu, Philippines</dd>
               </div>
             </dl>
             <p className="mt-8 text-[11px] leading-relaxed text-bone/35">
@@ -509,7 +569,7 @@ export default async function HomePage() {
       <div className="border-t border-bone/10">
         <div className="wrap flex flex-wrap items-center justify-between gap-2 py-4 text-[10px] text-bone/25">
           <span>
-            Next broadcast: {slateMatches[0] ? formatKickoff(slateMatches[0].startsAt) : "TBC"} CET
+            Next broadcast: {slateMatches[0] ? formatKickoff(slateMatches[0].startsAt) : "TBC"} PHT
           </span>
           <span>Scores and times are seed data for this build</span>
         </div>

@@ -1,7 +1,7 @@
 import type { Match } from "@/lib/types";
 
 /**
- * Fixture feed. Times are ISO/UTC; the UI renders them in Europe/Berlin.
+ * Fixture feed. Times are ISO/UTC; the UI renders them in Asia/Manila.
  * Swap this module for a live score provider without touching the views.
  */
 export const matches: Match[] = [

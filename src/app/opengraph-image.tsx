@@ -32,9 +32,9 @@ export default function OpengraphImage() {
         >
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <div style={{ display: "flex", width: 18, height: 18, background: "#2f4bff" }} />
-            <div style={{ display: "flex" }}>Esports organisation &amp; creative studio</div>
+            <div style={{ display: "flex" }}>Esports media house · creative studio</div>
           </div>
-          <div style={{ display: "flex" }}>Berlin · since 2019</div>
+          <div style={{ display: "flex" }}>Cebu · Philippines</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -76,9 +76,11 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ display: "flex" }}>
-            League of Legends · VALORANT · CS2 · Rocket League
+            Media · Esports · Partnerships · Experiences
           </div>
-          <div style={{ display: "flex", color: "#2f4bff", letterSpacing: 1 }}>avante.gg</div>
+          <div style={{ display: "flex", color: "#2f4bff", letterSpacing: 1 }}>
+            @avanteesports.gg
+          </div>
         </div>
       </div>
     ),

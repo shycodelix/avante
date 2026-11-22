@@ -227,6 +227,43 @@ export interface Capability {
   items: string[];
 }
 
+export interface Pillar {
+  id: string;
+  name: string;
+  /** The one-line promise that sits under the pillar name. */
+  lead: string;
+  summary: string;
+  items: string[];
+}
+
+export interface BrandValue {
+  id: string;
+  name: string;
+  summary: string;
+}
+
+export interface SocialLink {
+  id: "facebook" | "instagram" | "tiktok" | "threads";
+  label: string;
+  handle: string;
+  href: string;
+}
+
+export interface Brand {
+  name: string;
+  tagline: string;
+  location: string;
+  region: string;
+  founded: number;
+  intro: string;
+  whoWeAre: string;
+  vision: string;
+  mission: string;
+  belief: string;
+  horizon: string;
+  email: string;
+}
+
 export interface HubDefinition {
   id: string;
   href: string;

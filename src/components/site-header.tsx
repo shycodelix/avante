@@ -7,6 +7,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { cn } from "@/lib/cn";
 import { getLenis } from "@/lib/lenis-store";
+import type { SocialLink } from "@/lib/types";
+import { SocialLinks } from "@/components/social-links";
 
 const NAV = [
   { href: "/", label: "Studio" },
@@ -34,7 +36,13 @@ function isActive(pathname: string, href: string): boolean {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function SiteHeader({ liveCount }: { liveCount: number }) {
+export function SiteHeader({
+  liveCount,
+  socials,
+}: {
+  liveCount: number;
+  socials: SocialLink[];
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -97,6 +105,11 @@ export function SiteHeader({ liveCount }: { liveCount: number }) {
           </nav>
 
           <div className="flex items-center gap-2">
+            <SocialLinks
+              links={socials}
+              variant="icons"
+              className="mr-1 hidden gap-0.5 xl:flex"
+            />
             <Link
               href="/matches"
               className={cn(
@@ -193,14 +206,21 @@ export function SiteHeader({ liveCount }: { liveCount: number }) {
                   </span>
                 </Link>
               ))}
-              <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-8 text-[11px] text-bone/40">
-                <span>Berlin · est. 2019</span>
-                <a
-                  className="text-bone/70 underline decoration-cobalt decoration-2 underline-offset-4"
-                  href="mailto:studio@avante.gg"
-                >
-                  studio@avante.gg
-                </a>
+              <div className="mt-auto pt-8">
+                <SocialLinks
+                  links={socials}
+                  variant="text"
+                  className="text-[11px] text-bone/45"
+                />
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-bone/10 pt-4 text-[11px] text-bone/40">
+                  <span>Cebu · Philippines · est. 2019</span>
+                  <a
+                    className="text-bone/70 underline decoration-cobalt decoration-2 underline-offset-4"
+                    href="mailto:studio@avante.gg"
+                  >
+                    studio@avante.gg
+                  </a>
+                </div>
               </div>
             </nav>
           </motion.div>

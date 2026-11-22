@@ -28,7 +28,7 @@ src/
 └─ lib/
    ├─ types.ts                the domain model everything is typed against
    ├─ content.ts              content adapter — the single read boundary
-   ├─ format.ts               deterministic dates (Europe/Berlin)
+   ├─ format.ts               deterministic dates (Asia/Manila)
    ├─ cn.ts                   class joiner
    └─ lenis-store.ts          module-level Lenis handle
 ```

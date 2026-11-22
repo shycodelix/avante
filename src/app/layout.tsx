@@ -5,7 +5,7 @@ import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
-import { getLiveMatches } from "@/lib/content";
+import { getLiveMatches, getSocials } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
 
 const display = Bricolage_Grotesque({
@@ -23,25 +23,43 @@ const sans = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Avante Esports — Organisation & Creative Studio",
+    default: "Avante Esports — Built to move forward",
     template: "%s · Avante Esports",
   },
   description:
-    "Avante Esports is an esports organisation and a creative studio. Competition, broadcast craft and culture coverage across League of Legends, VALORANT, CS2, Rocket League and beyond.",
+    "Cebu-born esports media house. A newsroom, creative studio, talent agency and event platform for Philippine esports — competition, coverage and culture across every title.",
+  keywords: [
+    "Avante Esports",
+    "Philippine esports",
+    "Cebu esports",
+    "esports media",
+    "grassroots tournaments",
+    "creator agency",
+    "cosplay",
+    "watch parties",
+  ],
+  authors: [{ name: "Avante Esports" }],
+  creator: "@avanteesports.gg",
   openGraph: {
     type: "website",
     siteName: "Avante Esports",
-    title: "Avante Esports — Organisation & Creative Studio",
+    locale: "en_PH",
+    title: "Avante Esports — Built to move forward",
     description:
-      "Teams, broadcast craft and the wider scene: news, live matches, leagues, transfers, cosplay and events from the Avante desk.",
+      "Built to move forward. For the love of the game. News, competition, partnerships and experiences from a Cebu-born esports media house.",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@avanteesports.gg",
+    creator: "@avanteesports.gg",
+  },
 };
 
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const liveCount = (await getLiveMatches()).length;
+  const socials = getSocials();
 
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
@@ -53,7 +71,7 @@ export default async function RootLayout({
         >
           Skip to content
         </a>
-        <SiteHeader liveCount={liveCount} />
+        <SiteHeader liveCount={liveCount} socials={socials} />
         <main id="main">{children}</main>
         <SiteFooter />
       </body>

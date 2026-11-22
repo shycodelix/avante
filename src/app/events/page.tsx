@@ -39,7 +39,7 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
             gets in a room.
           </>
         }
-        description="Arena weekends, online cups and the studio nights we host in Berlin. Dates are local to the venue; everything else is on the matches desk."
+        description="Arena weekends, online cups and the watch parties we host across the Philippines. Dates are local to the venue; everything else is on the matches desk."
         meta={[
           { label: "On the calendar", value: String(events.length) },
           { label: "Time zone", value: "CET" },

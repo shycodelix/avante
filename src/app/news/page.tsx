@@ -93,7 +93,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
         resultLabel={
           q
             ? `${articles.length} results for “${q}”`
-            : `${articles.length} stories · reporting from Berlin, Seoul and São Paulo`
+            : `${articles.length} stories · reporting from Cebu and across the Philippines`
         }
       />
 
