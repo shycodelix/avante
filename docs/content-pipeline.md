@@ -175,3 +175,43 @@ and never depend on a third-party API.
   per-game paid plans would not.
 - **Who edits.** If the answer is "one person, occasionally", option 3 is
   honestly better value than option 1.
+
+## Liquipedia, tested
+
+Liquipedia exposes two different APIs and only one of them is usable today.
+
+**MediaWiki API — works.** `scripts/liquipedia-probe.mjs` queries it with the
+required User-Agent and two-second spacing. Verified on 2026-11-22:
+
+```
+search: LoL Championship Pacific
+  LoL Championship Pacific (pageid 90242)
+  LCP/2026/Split 3 (pageid 101003)
+  ...
+wikitext head: LoL Championship Pacific
+  |name=LoL Championship Pacific
+  |abbreviation=LCP
+  |organizer=Riot Games
+  |country=Asia-Pacific
+```
+
+That is enough to resolve a circuit to its page and its split pages, but the
+payload is wikitext. Match rows live in templates (`{{Match}}`, match lists),
+which means one parser per template shape and silent breakage whenever editors
+change a page. It is fine for *verification and linking*, not for driving a
+scoreboard.
+
+**LPDB v3 — needs a key.** `https://api.liquipedia.net/api/v3/match` returns
+`403 {"error":["API key \"\" is not valid."]}`. Access is requested from
+Liquipedia (free for non-commercial use, with attribution and rate limits) and
+returns structured match and tournament records that map cleanly onto `Match`
+and `League`.
+
+Recommendation: apply for an LPDB key, then implement `getMatches`,
+`getUpcomingMatches` and `getStandings` against LPDB behind the same
+`CONTENT_SOURCE` flag, keeping PandaScore's free fixtures plan as the fallback
+if the key is refused. Liquipedia content is CC-BY-SA, so any page rendering it
+needs visible attribution and a link back to the source wiki; the API terms also
+require gzip, a descriptive User-Agent, and at most one request every two
+seconds — a cache of 60s for live rows and 1h for fixtures keeps us far inside
+that.

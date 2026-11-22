@@ -13,11 +13,11 @@ export const articles: Article[] = [
   {
     id: "a-inv-final",
     slug: "avante-force-game-five-in-invitational-final",
-    title: "Avante force a game five against G2 in the Invitational final",
-    dek: "Two maps, two answers, and a Berlin crowd that has not sat down since the draft. The Invitational final goes the distance.",
+    title: "Avante force a game five against Cebu Kings in the Invitational final",
+    dek: "Two maps, two answers, and a Cebu crowd that has not sat down since the draft. The Invitational final goes the distance.",
     category: "news",
     titleIds: ["league-of-legends"],
-    tags: ["LEC", "AVT", "Avante Invitational"],
+    tags: ["LCP", "AVT", "Avante Invitational"],
     author: editors.jonas,
     publishedAt: "2026-11-22T18:40:00.000Z",
     readMinutes: 3,
@@ -28,7 +28,7 @@ export const articles: Article[] = [
     blocks: [
       {
         paragraphs: [
-          "Avante took game one with a composition that shouldn't have worked: a double-tank front line, a mid laner on a pick nobody had scrimmed, and 22 minutes of nothing happening before everything happened at once. G2 answered in game two by banning the pick and taking the tempo back with a five-minute bot-side collapse.",
+          "Avante took game one with a composition that shouldn't have worked: a double-tank front line, a mid laner on a pick nobody had scrimmed, and 22 minutes of nothing happening before everything happened at once. Cebu Kings answered in game two by banning the pick and taking the tempo back with a five-minute bot-side collapse.",
           "Game three is where the final turned into a series. Avante's coach Mira burned two bans on comfort picks, handed Lume the counter-matchup, and watched the mid laner go 4/0/6 before the first tower fell. The crowd noise at the Velodrom made the broadcast audio clip for the second time this weekend.",
         ],
         quote: {
@@ -39,8 +39,8 @@ export const articles: Article[] = [
       {
         heading: "What to watch in the decider",
         paragraphs: [
-          "G2 have won every game five they have played this calendar year, and they have won them the same way: early jungle pressure, a support roam at six minutes, and a Herald they refuse to contest unless the odds are absurd. Avante's answer all season has been to trade the Herald for two waves and a plate — which keeps them close, but rarely ahead.",
-          "The fearless format means both teams are drafting from a depleted pool. Expect Avante to open with the utility jungler they have held back all weekend, and expect G2 to test whether Fenrir will take the fight at the first Drake.",
+          "Cebu Kings have won every game five they have played this calendar year, and they have won them the same way: early jungle pressure, a support roam at six minutes, and a Herald they refuse to contest unless the odds are absurd. Avante's answer all season has been to trade the Herald for two waves and a plate — which keeps them close, but rarely ahead.",
+          "The fearless format means both teams are drafting from a depleted pool. Expect Avante to open with the utility jungler they have held back all weekend, and expect Cebu Kings to test whether Fenrir will take the fight at the first Drake.",
         ],
       },
     ],
@@ -52,7 +52,7 @@ export const articles: Article[] = [
     dek: "The 20-year-old has a verbal agreement in place, with an academy buyout the last item on the table.",
     category: "leaks",
     titleIds: ["league-of-legends"],
-    tags: ["LEC", "AVT", "LEAK"],
+    tags: ["LCP", "AVT", "LEAK"],
     author: editors.ines,
     publishedAt: "2026-11-22T09:15:00.000Z",
     readMinutes: 2,
@@ -61,8 +61,8 @@ export const articles: Article[] = [
     blocks: [
       {
         paragraphs: [
-          "Avante have reached a verbal agreement with support Kael, according to two people with knowledge of the negotiations. The 20-year-old spent 2026 on a academy roster in the LFL and is regarded inside the org as the cheapest route to a top-four LEC support.",
-          "The remaining hurdle is a buyout clause reported at €180,000, which Avante want structured across two payments. Talks are described as advanced but not signed, and one source cautioned that a second LEC team has asked to be kept informed.",
+          "Avante have reached a verbal agreement with support Kael, according to two people with knowledge of the negotiations. The 20-year-old spent 2026 on a academy roster in the Philippine academy circuit and is regarded inside the org as the cheapest route to a top-four LCP support.",
+          "The remaining hurdle is a buyout clause reported at ₱9.6 million, which Avante want structured across two payments. Talks are described as advanced but not signed, and one source cautioned that a second LCP team has asked to be kept informed.",
         ],
       },
       {
@@ -77,11 +77,11 @@ export const articles: Article[] = [
   {
     id: "a-studio-lec",
     slug: "inside-the-lec-2027-broadcast-package",
-    title: "Eleven weeks, one graphics package: inside the LEC 2027 build",
+    title: "Eleven weeks, one graphics package: inside the LCP 2027 build",
     dek: "A studio diary on type tests, lower-third timing, and the argument about whether a scoreboard should ever be beautiful.",
     category: "features",
     titleIds: ["league-of-legends"],
-    tags: ["Studio", "Broadcast", "LEC"],
+    tags: ["Studio", "Broadcast", "LCP"],
     author: editors.studio,
     publishedAt: "2026-11-20T11:00:00.000Z",
     readMinutes: 6,
@@ -118,11 +118,11 @@ export const articles: Article[] = [
   {
     id: "a-offseason-tracker",
     slug: "lec-2027-offseason-tracker",
-    title: "The 2027 LEC offseason tracker: every confirmed move",
+    title: "The 2027 LCP offseason tracker: every confirmed move",
     dek: "Six rosters have already changed shape. We are keeping the receipts in one place, updated as deals are signed.",
     category: "news",
     titleIds: ["league-of-legends"],
-    tags: ["LEC", "Transfers"],
+    tags: ["LCP", "Transfers"],
     author: editors.ines,
     publishedAt: "2026-11-21T08:00:00.000Z",
     readMinutes: 4,
@@ -130,21 +130,21 @@ export const articles: Article[] = [
     blocks: [
       {
         paragraphs: [
-          "The LEC's 2026 season ended with G2 on top and three rosters already planning for a rebuild. Two weeks later, the market has moved faster than any offseason since the franchise model began: six of ten teams have confirmed at least one change, and three more are waiting on buyouts.",
+          "The LCP's 2026 season ended with Cebu Kings on top and three rosters already planning for a rebuild. Two weeks later, the market has moved faster than any offseason since the franchise model began: six of ten teams have confirmed at least one change, and three more are waiting on buyouts.",
           "Below is what is signed, what is reported, and what is still noise. Anything marked as a report comes from at least two independent sources and has not been confirmed by either org.",
         ],
       },
       {
         heading: "Confirmed",
         paragraphs: [
-          "Movistar KOI have completed the Myrwn signing from GIANTX, a move that had been reported for eleven days before the announcement. Team Heretics brought in Trymbi on a one-year deal to stabilise a support position that cycled through three players in 2026. Fnatic replaced Oscarinin after four seasons, and GIANTX have begun rebuilding around their academy mid.",
+          "Quezon Reapers have completed the Myrwn signing from Cagayan Raiders, a move that had been reported for eleven days before the announcement. Bacolod Storm brought in Trymbi on a one-year deal to stabilise a support position that cycled through three players in 2026. Davao Forge replaced Oscarinin after four seasons, and Cagayan Raiders have begun rebuilding around their academy mid.",
           "Avante's only confirmed business so far is a two-year extension for Kaze, the largest contract in the organisation's history. The support position remains open.",
         ],
       },
       {
         heading: "Reported, not signed",
         paragraphs: [
-          "Kael to Avante is the closest thing to done without a signature. Sable to Karmine Corp is being explored but is not close, and the buyout figure being floated is higher than the number two sources have seen. Treat both as unconfirmed until an org says otherwise.",
+          "Kael to Avante is the closest thing to done without a signature. Sable to Manila Vipers is being explored but is not close, and the buyout figure being floated is higher than the number two sources have seen. Treat both as unconfirmed until an org says otherwise.",
         ],
       },
     ],
@@ -156,14 +156,14 @@ export const articles: Article[] = [
     dek: "Solace and Halo step up after a season in the Ascension pipeline, with the org keeping its import slot open.",
     category: "news",
     titleIds: ["valorant"],
-    tags: ["VCT EMEA", "AVT", "Academy"],
+    tags: ["VCT Pacific", "AVT", "Academy"],
     author: editors.priya,
     publishedAt: "2026-11-19T10:30:00.000Z",
     readMinutes: 3,
     blocks: [
       {
         paragraphs: [
-          "Avante will start the 2027 VCT EMEA kickoff with two academy promotions, the organisation confirmed on Wednesday. Solace, an initiator who spent 2026 as the academy's primary caller, and Halo, a flex player who has covered every role except controller at tier two, will both step into the main roster.",
+          "Avante will start the 2027 VCT Pacific kickoff with two academy promotions, the organisation confirmed on Wednesday. Solace, an initiator who spent 2026 as the academy's primary caller, and Halo, a flex player who has covered every role except controller at tier two, will both step into the main roster.",
           "The move keeps Avante's import slot open, which the org intends to use on a controller if the right player becomes available before the roster lock. Until then, Rook moves back to the role he played in 2025.",
         ],
       },
@@ -179,11 +179,11 @@ export const articles: Article[] = [
   {
     id: "a-cosplay-production",
     slug: "cosplay-is-production-berlin-build-rooms",
-    title: "Cosplay is production: a day inside Berlin's build rooms",
+    title: "Cosplay is production: a day inside Cebu's build rooms",
     dek: "Foam, resin, a borrowed sewing machine and twelve weeks of unpaid craft. The makers behind the scene's best sets explain the work.",
     category: "features",
     titleIds: ["league-of-legends", "valorant"],
-    tags: ["Cosplay", "Craft", "Berlin"],
+    tags: ["Cosplay", "Craft", "Cebu"],
     author: editors.tomas,
     publishedAt: "2026-11-18T09:00:00.000Z",
     readMinutes: 7,
@@ -204,7 +204,7 @@ export const articles: Article[] = [
         heading: "The unsung half of the scene",
         paragraphs: [
           "Cosplay coverage usually stops at the photograph. The photograph is the last ten minutes of a process that runs for months: pattern drafting, resin casting in a kitchen, three fittings, and a repair kit packed for the con floor.",
-          "The best sets in Berlin are built by people who describe themselves as production crews first and cosplayers second. They share moulds, lend machines, and keep a group chat of suppliers who will sell two metres of the right fabric without a minimum order.",
+          "The best sets in Cebu are built by people who describe themselves as production crews first and cosplayers second. They share moulds, lend machines, and keep a group chat of suppliers who will sell two metres of the right fabric without a minimum order.",
         ],
       },
       {
@@ -245,11 +245,11 @@ export const articles: Article[] = [
   {
     id: "a-rlcs-expansion",
     slug: "report-rlcs-emea-expands-to-sixteen-teams",
-    title: "Report: RLCS EMEA expands to sixteen teams for 2027",
+    title: "Report: RLCS APAC expands to sixteen teams for 2027",
     dek: "Two open-qualifier slots would be added to the regional, with a revised points structure rewarding consistency over peaks.",
     category: "leaks",
     titleIds: ["rocket-league"],
-    tags: ["RLCS", "EMEA", "LEAK"],
+    tags: ["RLCS", "APAC", "LEAK"],
     author: editors.ines,
     publishedAt: "2026-11-16T15:00:00.000Z",
     readMinutes: 2,
@@ -257,7 +257,7 @@ export const articles: Article[] = [
     blocks: [
       {
         paragraphs: [
-          "RLCS EMEA will expand from fourteen to sixteen teams for the 2027 season, according to three people briefed on the plans, with two places reserved for open qualifiers rather than invited organisations.",
+          "RLCS APAC will expand from fourteen to sixteen teams for the 2027 season, according to three people briefed on the plans, with two places reserved for open qualifiers rather than invited organisations.",
           "The points structure is also expected to change: regional weekends would carry equal weight, replacing the current system that makes the third regional worth more than the first. The stated aim is to stop teams from treating the first two weekends as practice.",
         ],
       },
@@ -284,7 +284,7 @@ export const articles: Article[] = [
     blocks: [
       {
         paragraphs: [
-          "Three years ago, a bootcamp meant a LAN room, ten desks, and a house. This winter, two EMEA orgs are running their first scrim blocks from handheld PCs, with players in four countries and a coach on a laptop in Berlin.",
+          "Three years ago, a bootcamp meant a LAN room, ten desks, and a house. This winter, two APAC orgs are running their first scrim blocks from handheld PCs, with players in four countries and a coach on a laptop in Cebu.",
           "The pitch is not performance — a handheld will not match a desktop at 360Hz. It is availability. A player can take a scrim block from a hotel room, a train, or their parents' house, which matters in a sport where the offseason is eight weeks long and half of it is spent travelling.",
         ],
       },
@@ -304,7 +304,7 @@ export const articles: Article[] = [
     dek: "Avante's head coach on the worst review meeting of the season, the value of a losing streak, and why she banned one word from the room.",
     category: "interviews",
     titleIds: ["league-of-legends"],
-    tags: ["LEC", "AVT", "Interview"],
+    tags: ["LCP", "AVT", "Interview"],
     author: editors.jonas,
     publishedAt: "2026-11-14T10:00:00.000Z",
     readMinutes: 8,
@@ -392,24 +392,24 @@ export const articles: Article[] = [
     id: "a-watch-invitational",
     slug: "how-to-watch-the-avante-invitational",
     title: "How to watch the Avante Invitational: bracket, times, stream",
-    dek: "Four days, eight teams, one stage in Berlin. Everything you need to follow the final.",
+    dek: "Four days, eight teams, one stage in Cebu. Everything you need to follow the final.",
     category: "guides",
     titleIds: ["league-of-legends"],
-    tags: ["Avante Invitational", "Guide", "LEC"],
+    tags: ["Avante Invitational", "Guide", "LCP"],
     author: editors.marta,
     publishedAt: "2026-11-19T16:00:00.000Z",
     readMinutes: 2,
     blocks: [
       {
         paragraphs: [
-          "The Avante Invitational runs 20–23 November at the Velodrom in Berlin. Eight teams, single elimination, best-of-five grand final. Broadcast is in English and German on the org's Twitch channel, with a clean feed available for co-streamers.",
-          "Doors open two hours before the first match each day. The venue is sold out for the final; returns are released on the official resale partner at 10:00 CET on match days.",
+          "The Avante Invitational runs 20–23 November at the Velodrom in Cebu. Eight teams, single elimination, best-of-five grand final. Broadcast is in English and Filipino on the org's Twitch channel, with a clean feed available for co-streamers.",
+          "Doors open two hours before the first match each day. The venue is sold out for the final; returns are released on the official resale partner at 10:00 PHT on match days.",
         ],
       },
       {
         heading: "The bracket",
         paragraphs: [
-          "G2 and Avante reached the final through opposite sides of the bracket. G2 beat Fnatic 2–1 in the quarter-final and KOI 2–0 in the semi. Avante beat Heretics 2–0 in the semi after a 2–0 quarter-final against BDS.",
+          "Cebu Kings and Avante reached the final through opposite sides of the bracket. Cebu Kings beat Davao Forge 2–1 in the quarter-final and Quezon Reapers 2–0 in the semi. Avante beat Bacolod Storm 2–0 in the semi after a 2–0 quarter-final against Zamboanga Reef.",
         ],
       },
     ],
@@ -458,7 +458,7 @@ export const articles: Article[] = [
     blocks: [
       {
         paragraphs: [
-          "Tier two has spent a decade being described as a pipeline and funded like a hobby. In 2027 it will be funded, in several European markets, like a small business: lower base salaries, larger revenue shares, and contracts that pay a player a percentage of the buyout that takes them to tier one.",
+          "Tier two has spent a decade being described as a pipeline and funded like a hobby. In 2027 it will be funded, in several Southeast Asian markets, like a small business: lower base salaries, larger revenue shares, and contracts that pay a player a percentage of the buyout that takes them to tier one.",
           "The change is being driven less by idealism than by arithmetic. Partnered orgs cannot carry eight-figure academy budgets, and the players who would once have quit at 20 are staying because a tier-two salary plus streaming now covers rent.",
         ],
       },
@@ -474,25 +474,25 @@ export const articles: Article[] = [
   {
     id: "a-scrim-facility",
     slug: "avante-karmine-corp-shared-scrim-facility",
-    title: "Avante and Karmine Corp open a shared scrim facility in Berlin",
-    dek: "Two rival LEC orgs, one building, and a scheduling system designed to keep the secrets on separate floors.",
+    title: "Avante and Manila Vipers open a shared scrim facility in Cebu",
+    dek: "Two rival LCP orgs, one building, and a scheduling system designed to keep the secrets on separate floors.",
     category: "news",
     titleIds: ["league-of-legends", "valorant", "cs2"],
-    tags: ["LEC", "AVT", "KC", "Facilities"],
+    tags: ["LCP", "AVT", "MNL", "Facilities"],
     author: editors.marta,
     publishedAt: "2026-11-06T13:00:00.000Z",
     readMinutes: 3,
     blocks: [
       {
         paragraphs: [
-          "Avante and Karmine Corp have jointly opened a 900m² practice facility in Berlin's Kreuzberg district, with separate floors, separate networks and a shared physical training space that both orgs will use on alternating days.",
+          "Avante and Manila Vipers have jointly opened a 900m² practice facility in Cebu's IT Park, with separate floors, separate networks and a shared physical training space that both orgs will use on alternating days.",
           "The building houses eleven practice rooms, a broadcast-grade streaming booth, and a recovery suite. Crucially, the two orgs do not share a network segment, a scheduling calendar or a single practice room. The shared space is limited to the gym, the kitchen and a media room.",
         ],
       },
       {
         heading: "Why rivals share a building",
         paragraphs: [
-          "Berlin's commercial property market has made standalone facilities expensive, and both orgs needed more space than either could justify alone. The arrangement cuts each org's fixed costs by roughly a third, according to two people familiar with the lease.",
+          "Cebu's commercial property market has made standalone facilities expensive, and both orgs needed more space than either could justify alone. The arrangement cuts each org's fixed costs by roughly a third, according to two people familiar with the lease.",
           "It also creates a scrimming partner next door, though both orgs insist they will not scrim each other during a split. The scheduling system, built in-house, enforces a two-week embargo around any match between them.",
         ],
       },

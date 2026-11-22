@@ -7,16 +7,16 @@ import type { League } from "@/lib/types";
 export const leagues: League[] = [
   {
     id: "lec",
-    name: "League of Legends EMEA Championship",
-    short: "LEC",
+    name: "League of Legends Championship Pacific",
+    short: "LCP",
     titleId: "league-of-legends",
-    region: "EMEA",
+    region: "APAC",
     tier: "Tier 1",
     format: "Fearless draft · BO3 regular season, BO5 playoffs",
     season: "2026 · complete",
-    prizePool: "€1.2M",
+    prizePool: "₱1.2M",
     description:
-      "Ten partnered teams, one studio in Berlin, and the loudest regular season in the West. The 2027 winter split opens on 15 January with a single round-robin and a top-six bracket.",
+      "Ten partnered teams, one studio in Cebu, and the loudest regular season in the West. The 2027 winter split opens on 15 January with a single round-robin and a top-six bracket.",
     standings: [
       { teamId: "g2-lol", played: 18, wins: 14, losses: 4, mapDiff: 19, points: 14, form: ["W", "W", "L", "W", "W"] },
       { teamId: "kc-lol", played: 18, wins: 13, losses: 5, mapDiff: 14, points: 13, form: ["W", "L", "W", "W", "W"] },
@@ -51,10 +51,10 @@ export const leagues: League[] = [
   },
   {
     id: "vct-emea",
-    name: "VALORANT Champions Tour EMEA",
-    short: "VCT EMEA",
+    name: "VALORANT Champions Tour Pacific",
+    short: "VCT Pacific",
     titleId: "valorant",
-    region: "EMEA",
+    region: "APAC",
     tier: "Tier 1",
     format: "Kickoff + two stages · BO3, BO5 finals",
     season: "2026 · complete",
@@ -80,7 +80,7 @@ export const leagues: League[] = [
     season: "2026 · complete",
     prizePool: "$750K",
     description:
-      "Los Angeles and São Paulo share the season, with the Ascension winner arriving in 2027 and a revised two-stage calendar.",
+      "Los Angeles and Manila share the season, with the Ascension winner arriving in 2027 and a revised two-stage calendar.",
     standings: [
       { teamId: "sen-val", played: 18, wins: 13, losses: 5, mapDiff: 13, points: 13, form: ["W", "W", "L", "W", "W"] },
       { teamId: "loud-val", played: 18, wins: 11, losses: 7, mapDiff: 5, points: 11, form: ["W", "L", "W", "L", "W"] },
@@ -110,16 +110,16 @@ export const leagues: League[] = [
   },
   {
     id: "rlcs-emea",
-    name: "RLCS EMEA Regional",
-    short: "RLCS EMEA",
+    name: "RLCS APAC Regional",
+    short: "RLCS APAC",
     titleId: "rocket-league",
-    region: "EMEA",
+    region: "APAC",
     tier: "Tier 1",
     format: "Open qualifiers → double-elimination regional",
     season: "2026 · complete",
     prizePool: "$300K",
     description:
-      "Sixteen teams, three regional weekends and a points race that now sends four EMEA rosters straight to the world championship group stage.",
+      "Sixteen teams, three regional weekends and a points race that now sends four APAC rosters straight to the world championship group stage.",
     standings: [
       { teamId: "vit-rl", played: 15, wins: 12, losses: 3, mapDiff: 14, points: 12, form: ["W", "W", "W", "L", "W"] },
       { teamId: "kc-rl", played: 15, wins: 11, losses: 4, mapDiff: 10, points: 11, form: ["W", "L", "W", "W", "W"] },

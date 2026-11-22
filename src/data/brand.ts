@@ -89,22 +89,10 @@ export const values: BrandValue[] = [
 
 export const socials: SocialLink[] = [
   {
-    id: "facebook",
-    label: "Facebook",
-    handle: "@avanteesports.gg",
-    href: "https://www.facebook.com/avanteesports.gg",
-  },
-  {
     id: "instagram",
     label: "Instagram",
     handle: "@avanteesports.gg",
     href: "https://www.instagram.com/avanteesports.gg",
-  },
-  {
-    id: "tiktok",
-    label: "TikTok",
-    handle: "@avanteesports.gg",
-    href: "https://www.tiktok.com/@avanteesports.gg",
   },
   {
     id: "threads",
@@ -112,4 +100,8 @@ export const socials: SocialLink[] = [
     handle: "@avanteesports.gg",
     href: "https://www.threads.com/@avanteesports.gg",
   },
+  // Facebook and TikTok are intentionally not listed yet. Both were checked
+  // against the handle on 2026-11-22: TikTok answered "this account isn't
+  // available", and Facebook served only a redirect shell that proves nothing.
+  // Add them back with confirmed URLs rather than guessing the path.
 ];
