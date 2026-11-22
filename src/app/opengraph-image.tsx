@@ -53,15 +53,14 @@ export default function OpengraphImage() {
             style={{
               display: "flex",
               marginTop: 30,
-              fontSize: 30,
+              fontSize: 34,
               lineHeight: 1.35,
               color: "#f1ede3",
               opacity: 0.74,
               maxWidth: 1040,
-              whiteSpace: "nowrap",
             }}
           >
-            We field the teams — and build the rooms they are watched in.
+            Built to move forward. For the love of the game.
           </div>
         </div>
 
