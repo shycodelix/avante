@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surface — the arena at lights-down, plus a warm paper for editorial desks. */
+  --color-ink: #0a0c0d;
+  --color-ink-2: #0e1214;
+  --color-ink-3: #161d20;
+  --color-ink-4: #1f282c;
+
+  --color-bone: #f1ede3;
+  --color-bone-2: #d6d0c1;
+  --color-bone-3: #9c978b;
+
+  /* One structural accent (broadcast cobalt) and one status colour (live red). */
+  --color-cobalt: #2f4bff;
+  --color-cobalt-2: #1b2fa8;
+  --color-live: #ff3d2e;
+
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: var(--font-bricolage), var(--font-instrument), ui-sans-serif,
+    system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-cobalt);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cobalt);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    background-color: var(--color-ink-3);
+  }
+}
+
+/* Lenis — recommended styles, inlined so no package CSS needs importing. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Layout rail used by every page. */
+.wrap {
+  width: 100%;
+  max-width: 96rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wrap {
+    padding-inline: 3.5rem;
+  }
+}
+
+/* Display scale, fluid rather than stepped. */
+.display-hero {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.8;
+  font-size: clamp(3.2rem, 20.5vw, 21rem);
+}
+
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  font-size: clamp(2.4rem, 5.4vw, 4.6rem);
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Marquee for the live/title ticker. Duplicated track, transform-only. */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 46s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Fine grid used behind hero and hub headers. */
+.grid-lines {
+  background-image: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-bone) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-bone) 5%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 96px 96px;
+}
+
+.paper .grid-lines {
+  background-image: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-ink) 8%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-ink) 6%, transparent) 1px,
+      transparent 1px
+    );
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hero entrance: one orchestrated moment on first paint, no scroll dependency. */
+@keyframes hero-line-rise {
+  from {
+    transform: translate3d(0, 108%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-line {
+  animation: hero-line-rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-fade {
+  animation: hero-fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .hero-line,
+  .hero-fade {
+    animation: none;
+    transform: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
