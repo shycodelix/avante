@@ -1,16 +1,32 @@
 import type { Metadata } from "next";
 
+import { canonicalPath } from "@/lib/site";
+
 import { EventList } from "@/components/event-list";
 import { FilterBar } from "@/components/filter-bar";
 import { PageHeader } from "@/components/page-header";
 import { getEvents, getTitles } from "@/lib/content";
 import type { EventFormat, TitleId } from "@/lib/types";
 
-export const metadata: Metadata = {
-  title: "Events",
-  description:
-    "LANs, online cups, studio nights and build evenings: the Avante events calendar across every title we cover.",
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ format?: string; title?: string }>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const canonical = canonicalPath("/events", {
+    format: params.format,
+    title: params.title,
+  });
+
+  return {
+    title: "Events",
+    description:
+      "LANs, online cups, studio nights and build evenings: the Avante events calendar across every title we cover.",
+    alternates: { canonical },
+    openGraph: { url: canonical },
+  };
+}
 
 export const revalidate = 600;
 

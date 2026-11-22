@@ -30,11 +30,15 @@ export async function generateMetadata({
 
   if (!article) return { title: "Story not found" };
 
+  const canonical = `/news/${article.slug}`;
+
   return {
     title: article.title,
     description: article.dek,
+    alternates: { canonical },
     openGraph: {
       type: "article",
+      url: canonical,
       title: article.title,
       description: article.dek,
       publishedTime: article.publishedAt,

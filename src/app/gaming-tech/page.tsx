@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   title: "Gaming & tech",
   description:
     "Hardware, patches, agent design and the decisions that change how competitive games are played.",
+  alternates: { canonical: "/gaming-tech" },
+  openGraph: { url: "/gaming-tech" },
 };
 
 export const revalidate = 300;

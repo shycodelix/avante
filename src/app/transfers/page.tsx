@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { canonicalPath } from "@/lib/site";
+
 import { FilterBar } from "@/components/filter-bar";
 import { PageHeader } from "@/components/page-header";
 import { StatusBadge } from "@/components/status-badge";
@@ -15,11 +17,25 @@ import { cn } from "@/lib/cn";
 import { formatDate } from "@/lib/format";
 import type { TitleId, TransferStatus } from "@/lib/types";
 
-export const metadata: Metadata = {
-  title: "Transfers & signings",
-  description:
-    "Confirmed signings, reported agreements and rumours across League of Legends, VALORANT, CS2 and Rocket League — labelled by status.",
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ title?: string; status?: string }>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const canonical = canonicalPath("/transfers", {
+    title: params.title,
+    status: params.status,
+  });
+
+  return {
+    title: "Transfers & signings",
+    description:
+      "Confirmed signings, reported agreements and rumours across League of Legends, VALORANT, CS2 and Rocket League — labelled by status.",
+    alternates: { canonical },
+    openGraph: { url: canonical },
+  };
+}
 
 export const revalidate = 120;
 

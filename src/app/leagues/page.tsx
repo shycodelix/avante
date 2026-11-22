@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { canonicalPath } from "@/lib/site";
+
 import { ArticleCard } from "@/components/article-card";
 import { MatchCard } from "@/components/match-card";
 import { PageHeader } from "@/components/page-header";
@@ -15,11 +17,22 @@ import {
 } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
-export const metadata: Metadata = {
-  title: "Leagues & standings",
-  description:
-    "Standings, formats and season context for the LCP, LCK, VCT Pacific, VCT Americas, ESL Pro League and RLCS APAC.",
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ league?: string }>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const canonical = canonicalPath("/leagues", { league: params.league });
+
+  return {
+    title: "Leagues & standings",
+    description:
+      "Standings, formats and season context for the LCP, LCK, VCT Pacific, VCT Americas, ESL Pro League and RLCS APAC.",
+    alternates: { canonical },
+    openGraph: { url: canonical },
+  };
+}
 
 export const revalidate = 300;
 

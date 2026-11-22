@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   title: "Cosplay",
   description:
     "Builds, makers and studio shoots: Avante documents cosplay as production, not costume.",
+  alternates: { canonical: "/cosplay" },
+  openGraph: { url: "/cosplay" },
 };
 
 export const revalidate = 600;

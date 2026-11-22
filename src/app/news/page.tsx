@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { canonicalPath } from "@/lib/site";
+
 import { ArticleCard } from "@/components/article-card";
 import { FilterBar } from "@/components/filter-bar";
 import { PageHeader } from "@/components/page-header";
@@ -11,11 +13,26 @@ import {
 } from "@/lib/content";
 import type { ArticleCategory, TitleId } from "@/lib/types";
 
-export const metadata: Metadata = {
-  title: "Newsroom",
-  description:
-    "Every story from the Avante desk, newest first: league news, reports, interviews, features, guides and gaming & tech coverage.",
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string; title?: string; sort?: string }>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const canonical = canonicalPath("/news", {
+    category: params.category,
+    title: params.title,
+    sort: params.sort,
+  });
+
+  return {
+    title: "Newsroom",
+    description:
+      "Every story from the Avante desk, newest first: league news, reports, interviews, features, guides and gaming & tech coverage.",
+    alternates: { canonical },
+    openGraph: { url: canonical },
+  };
+}
 
 export const revalidate = 120;
 

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,6 +27,11 @@ import {
 } from "@/lib/content";
 import { formatDateRange, formatKickoff } from "@/lib/format";
 import type { StudioProject } from "@/lib/types";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { url: "/" },
+};
 
 export const revalidate = 300;
 

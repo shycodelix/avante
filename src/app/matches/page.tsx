@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { canonicalPath } from "@/lib/site";
+
 import { FilterBar } from "@/components/filter-bar";
 import { MatchCard } from "@/components/match-card";
 import { PageHeader } from "@/components/page-header";
@@ -11,11 +13,25 @@ import { getMatches, getTeamOrFallback, getTitles } from "@/lib/content";
 import { formatKickoff } from "@/lib/format";
 import type { Match, MatchStatus, TitleId } from "@/lib/types";
 
-export const metadata: Metadata = {
-  title: "Matches & live tracker",
-  description:
-    "Live scores, upcoming fixtures and recent results across League of Legends, VALORANT, CS2, Rocket League, Dota 2 and Tekken 8.",
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ title?: string; status?: string }>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const canonical = canonicalPath("/matches", {
+    title: params.title,
+    status: params.status,
+  });
+
+  return {
+    title: "Matches & live tracker",
+    description:
+      "Live scores, upcoming fixtures and recent results across League of Legends, VALORANT, CS2, Rocket League, Dota 2 and Tekken 8.",
+    alternates: { canonical },
+    openGraph: { url: canonical },
+  };
+}
 
 export const revalidate = 60;
 
