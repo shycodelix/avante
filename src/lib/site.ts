@@ -6,5 +6,5 @@
  * absolute URLs in OG tags, robots and sitemap stay resolvable.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://avante-inky-ten.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://avanteesports.vercel.app"
 ).replace(/\/+$/, "");

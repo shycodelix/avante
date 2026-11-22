@@ -86,20 +86,27 @@ export function CosplayGallery({ entries }: { entries: CosplayEntry[] }) {
                     <span className="text-[10px] text-bone/40">
                       {entry.franchise}
                     </span>
-                    <span className="font-display text-[clamp(2rem,4vw,3rem)] leading-[0.95] tracking-[-0.04em] text-bone/85">
-                      {entry.character}
-                    </span>
+                    <div>
+                      <span className="block break-words font-display text-[clamp(1.75rem,3.4vw,2.5rem)] leading-[0.95] tracking-[-0.04em] text-bone/85">
+                        {entry.character}
+                      </span>
+                      <span className="mt-2 block text-[11px] text-bone/45">
+                        {entry.name} · {entry.location}
+                      </span>
+                    </div>
                   </div>
                 )}
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent p-4 pt-10">
-                  <p className="font-display text-lg leading-none tracking-tight text-bone">
-                    {entry.character}
-                  </p>
-                  <p className="mt-1 text-[11px] text-bone/55">
-                    {entry.name} · {entry.location}
-                  </p>
-                </div>
+                {entry.image && (
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent p-4 pt-10">
+                    <p className="font-display text-lg leading-none tracking-tight text-bone">
+                      {entry.character}
+                    </p>
+                    <p className="mt-1 text-[11px] text-bone/55">
+                      {entry.name} · {entry.location}
+                    </p>
+                  </div>
+                )}
 
                 <span className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center border border-bone/20 bg-ink/60 text-[11px] text-bone/70 opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
                   +
