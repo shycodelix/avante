@@ -18,7 +18,7 @@ import { cn } from "@/lib/cn";
 export const metadata: Metadata = {
   title: "Leagues & standings",
   description:
-    "Standings, formats and season context for the LEC, LCK, VCT EMEA, VCT Americas, ESL Pro League and RLCS EMEA.",
+    "Standings, formats and season context for the LCP, LCK, VCT Pacific, VCT Americas, ESL Pro League and RLCS APAC.",
 };
 
 export const revalidate = 300;

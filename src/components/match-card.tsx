@@ -37,7 +37,7 @@ function SideRow({
         <TeamBadge team={team} size="md" />
         <span
           className={cn(
-            "truncate text-[13px]",
+            "text-[13px] leading-tight",
             state === "loser" || state === "scheduled"
               ? "text-bone/60"
               : "text-bone",

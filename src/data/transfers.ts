@@ -42,7 +42,7 @@ export const transfers: Transfer[] = [
     league: "LCP",
     status: "rumour",
     date: "2026-11-21T17:30:00.000Z",
-    note: "MNL exploring a buyout. No agreement, and the figure being floated is above expectation.",
+    note: "Manila Vipers exploring a buyout. No agreement, and the figure being floated is above expectation.",
     reportedBy: "Transfers desk",
   },
   {

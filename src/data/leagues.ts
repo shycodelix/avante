@@ -6,7 +6,7 @@ import type { League } from "@/lib/types";
  */
 export const leagues: League[] = [
   {
-    id: "lec",
+    id: "lcp",
     name: "League of Legends Championship Pacific",
     short: "LCP",
     titleId: "league-of-legends",
@@ -16,7 +16,7 @@ export const leagues: League[] = [
     season: "2026 · complete",
     prizePool: "₱1.2M",
     description:
-      "Ten partnered teams, one studio in Cebu, and the loudest regular season in the West. The 2027 winter split opens on 15 January with a single round-robin and a top-six bracket.",
+      "Ten partnered teams and the loudest regular season in the Pacific. The 2027 Split 1 opens on 15 January with a single round-robin and a top-six bracket.",
     standings: [
       { teamId: "g2-lol", played: 18, wins: 14, losses: 4, mapDiff: 19, points: 14, form: ["W", "W", "L", "W", "W"] },
       { teamId: "kc-lol", played: 18, wins: 13, losses: 5, mapDiff: 14, points: 13, form: ["W", "L", "W", "W", "W"] },
@@ -50,7 +50,7 @@ export const leagues: League[] = [
     ],
   },
   {
-    id: "vct-emea",
+    id: "vct-pacific",
     name: "VALORANT Champions Tour Pacific",
     short: "VCT Pacific",
     titleId: "valorant",
@@ -80,7 +80,7 @@ export const leagues: League[] = [
     season: "2026 · complete",
     prizePool: "$750K",
     description:
-      "Los Angeles and Manila share the season, with the Ascension winner arriving in 2027 and a revised two-stage calendar.",
+      "Los Angeles and São Paulo share the season, with the Ascension winner arriving in 2027 and a revised two-stage calendar.",
     standings: [
       { teamId: "sen-val", played: 18, wins: 13, losses: 5, mapDiff: 13, points: 13, form: ["W", "W", "L", "W", "W"] },
       { teamId: "loud-val", played: 18, wins: 11, losses: 7, mapDiff: 5, points: 11, form: ["W", "L", "W", "L", "W"] },
@@ -109,7 +109,7 @@ export const leagues: League[] = [
     ],
   },
   {
-    id: "rlcs-emea",
+    id: "rlcs-apac",
     name: "RLCS APAC Regional",
     short: "RLCS APAC",
     titleId: "rocket-league",

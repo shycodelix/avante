@@ -101,14 +101,14 @@ export const events: EventItem[] = [
     format: "lan",
     startDate: "2026-11-20",
     endDate: "2026-11-23",
-    venue: "Velodrom",
+    venue: "SM Seaside Arena",
     status: "sold-out",
     blurb:
       "Eight teams, single elimination, best-of-five final. Our own off-season LAN, and the closing night of the 2026 season.",
   },
   {
     id: "e-offseason",
-    name: "VCT OFF//SEASON Manila",
+    name: "VCT OFF//SEASON Cebu",
     titleId: "valorant",
     city: "Cebu",
     country: "PH",

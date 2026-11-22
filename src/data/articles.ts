@@ -29,7 +29,7 @@ export const articles: Article[] = [
       {
         paragraphs: [
           "Avante took game one with a composition that shouldn't have worked: a double-tank front line, a mid laner on a pick nobody had scrimmed, and 22 minutes of nothing happening before everything happened at once. Cebu Kings answered in game two by banning the pick and taking the tempo back with a five-minute bot-side collapse.",
-          "Game three is where the final turned into a series. Avante's coach Mira burned two bans on comfort picks, handed Lume the counter-matchup, and watched the mid laner go 4/0/6 before the first tower fell. The crowd noise at the Velodrom made the broadcast audio clip for the second time this weekend.",
+          "Game three is where the final turned into a series. Avante's coach Mira burned two bans on comfort picks, handed Lume the counter-matchup, and watched the mid laner go 4/0/6 before the first tower fell. The crowd noise at the SM Seaside Arena made the broadcast audio clip for the second time this weekend.",
         ],
         quote: {
           text: "We stopped trying to win the draft and started trying to win the next fight. That's the whole adjustment.",
@@ -61,7 +61,7 @@ export const articles: Article[] = [
     blocks: [
       {
         paragraphs: [
-          "Avante have reached a verbal agreement with support Kael, according to two people with knowledge of the negotiations. The 20-year-old spent 2026 on a academy roster in the Philippine academy circuit and is regarded inside the org as the cheapest route to a top-four LCP support.",
+          "Avante have reached a verbal agreement with support Kael, according to two people with knowledge of the negotiations. The 20-year-old spent 2026 on an academy roster in the Philippine academy circuit and is regarded inside the org as the cheapest route to a top-four LCP support.",
           "The remaining hurdle is a buyout clause reported at ₱9.6 million, which Avante want structured across two payments. Talks are described as advanced but not signed, and one source cautioned that a second LCP team has asked to be kept informed.",
         ],
       },
@@ -69,14 +69,14 @@ export const articles: Article[] = [
         heading: "Why the move makes sense",
         paragraphs: [
           "Avante's 2026 support play was steady and passive: the third-lowest roam rate in the league and the second-highest ward count, a profile that kept Lume safe and left Fenrir alone on the map. Kael's academy tape is the opposite — aggressive roams, early river control, and a willingness to lose a wave to start a fight.",
-          "If it closes, Avante would enter the 2027 winter split with three players under 22 and the same coaching staff that took them to a top-eight finish at Worlds.",
+          "If it closes, Avante would enter the 2027 Split 1 with three players under 22 and the same coaching staff that took them to a top-eight finish at Worlds.",
         ],
       },
     ],
   },
   {
     id: "a-studio-lec",
-    slug: "inside-the-lec-2027-broadcast-package",
+    slug: "inside-the-lcp-2027-broadcast-package",
     title: "Eleven weeks, one graphics package: inside the LCP 2027 build",
     dek: "A studio diary on type tests, lower-third timing, and the argument about whether a scoreboard should ever be beautiful.",
     category: "features",
@@ -91,7 +91,7 @@ export const articles: Article[] = [
     blocks: [
       {
         paragraphs: [
-          "The brief arrived on a Tuesday with a hard date attached: eleven weeks until the 2027 winter split opener, one motion system, six show opens, and a scoreboard that had to survive being read on a phone at 480p in a noisy room.",
+          "The brief arrived on a Tuesday with a hard date attached: eleven weeks until the 2027 Split 1 opener, one motion system, six show opens, and a scoreboard that had to survive being read on a phone at 480p in a noisy room.",
           "We started with the scoreboard, because everything else follows it. A broadcast scoreboard is not a poster. It is read in a glance, at a distance, by someone who has already looked away. That rules out most of the expressive type we wanted to use, and it forced the whole identity into a narrower set of decisions: one display weight, two sizes, and a rule that numbers never move unless the number itself changes.",
         ],
         quote: {
@@ -117,7 +117,7 @@ export const articles: Article[] = [
   },
   {
     id: "a-offseason-tracker",
-    slug: "lec-2027-offseason-tracker",
+    slug: "lcp-2027-offseason-tracker",
     title: "The 2027 LCP offseason tracker: every confirmed move",
     dek: "Six rosters have already changed shape. We are keeping the receipts in one place, updated as deals are signed.",
     category: "news",
@@ -178,7 +178,7 @@ export const articles: Article[] = [
   },
   {
     id: "a-cosplay-production",
-    slug: "cosplay-is-production-berlin-build-rooms",
+    slug: "cosplay-is-production-cebu-build-rooms",
     title: "Cosplay is production: a day inside Cebu's build rooms",
     dek: "Foam, resin, a borrowed sewing machine and twelve weeks of unpaid craft. The makers behind the scene's best sets explain the work.",
     category: "features",
@@ -244,7 +244,7 @@ export const articles: Article[] = [
   },
   {
     id: "a-rlcs-expansion",
-    slug: "report-rlcs-emea-expands-to-sixteen-teams",
+    slug: "report-rlcs-apac-expands-to-sixteen-teams",
     title: "Report: RLCS APAC expands to sixteen teams for 2027",
     dek: "Two open-qualifier slots would be added to the regional, with a revised points structure rewarding consistency over peaks.",
     category: "leaks",
@@ -357,7 +357,7 @@ export const articles: Article[] = [
       {
         heading: "Where it screens",
         paragraphs: [
-          "The film premieres at the Velodrom on the closing night of the Avante Invitational, then goes to the org's channels the following week. A 4K master and a 30-second cutdown for broadcast are included in the delivery.",
+          "The film premieres at the SM Seaside Arena on the closing night of the Avante Invitational, then goes to the org's channels the following week. A 4K master and a 30-second cutdown for broadcast are included in the delivery.",
         ],
       },
     ],
@@ -402,7 +402,7 @@ export const articles: Article[] = [
     blocks: [
       {
         paragraphs: [
-          "The Avante Invitational runs 20–23 November at the Velodrom in Cebu. Eight teams, single elimination, best-of-five grand final. Broadcast is in English and Filipino on the org's Twitch channel, with a clean feed available for co-streamers.",
+          "The Avante Invitational runs 20–23 November at the SM Seaside Arena in Cebu. Eight teams, single elimination, best-of-five grand final. Broadcast is in English and Filipino on the org's Twitch channel, with a clean feed available for co-streamers.",
           "Doors open two hours before the first match each day. The venue is sold out for the final; returns are released on the official resale partner at 10:00 PHT on match days.",
         ],
       },

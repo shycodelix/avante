@@ -30,20 +30,20 @@ function ResultRow({ match }: { match: Match }) {
   const title = titleById.get(match.titleId);
 
   return (
-    <li className="grid grid-cols-[1fr_auto] items-center gap-4 border-b border-bone/10 py-4 transition-colors hover:bg-bone/[0.02] md:grid-cols-[92px_1fr_1fr_auto] md:gap-6">
+    <li className="grid grid-cols-1 gap-1.5 border-b border-bone/10 py-4 transition-colors hover:bg-bone/[0.02] md:grid-cols-[92px_1fr_1fr_auto] md:items-center md:gap-6">
       <span className="hidden text-[11px] text-bone/40 tnum md:block">
         {formatKickoff(match.startsAt)}
       </span>
       <span className="flex min-w-0 items-center gap-2.5">
         <TeamBadge team={home} size="sm" />
-        <span className={`truncate text-[13px] ${homeWon ? "text-bone" : "text-bone/50"}`}>
+        <span className={`flex-1 text-[13px] leading-tight ${homeWon ? "text-bone" : "text-bone/50"}`}>
           {home.name}
         </span>
         <span className="font-display text-sm text-bone tnum">{match.home.score}</span>
       </span>
       <span className="flex min-w-0 items-center gap-2.5">
         <TeamBadge team={away} size="sm" />
-        <span className={`truncate text-[13px] ${homeWon ? "text-bone/50" : "text-bone"}`}>
+        <span className={`flex-1 text-[13px] leading-tight ${homeWon ? "text-bone/50" : "text-bone"}`}>
           {away.name}
         </span>
         <span className="font-display text-sm text-bone/70 tnum">{match.away.score}</span>
@@ -99,7 +99,7 @@ export default async function MatchesPage({ searchParams }: MatchesPageProps) {
             as it happens.
           </>
         }
-        description="Live scores, the next fixtures on the calendar, and results with the series context that matters. Times are CET; all six titles share one board."
+        description="Live scores, the next fixtures on the calendar, and results with the series context that matters. Times are PHT; all six titles share one board."
         meta={[
           { label: "Live", value: String(live.length) },
           { label: "Fixtures", value: String(matches.length) },
@@ -200,7 +200,7 @@ export default async function MatchesPage({ searchParams }: MatchesPageProps) {
           </p>
           <span className="text-[11px] text-bone/35">
             {new Set(matches.map((match) => match.titleId)).size} titles · times in
-            CET
+            PHT
           </span>
         </div>
       </div>

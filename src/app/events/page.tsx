@@ -42,7 +42,7 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
         description="Arena weekends, online cups and the watch parties we host across the Philippines. Dates are local to the venue; everything else is on the matches desk."
         meta={[
           { label: "On the calendar", value: String(events.length) },
-          { label: "Time zone", value: "CET" },
+          { label: "Time zone", value: "PHT" },
         ]}
       />
 
