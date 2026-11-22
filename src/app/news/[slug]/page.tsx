@@ -12,6 +12,7 @@ import {
   getTitle,
 } from "@/lib/content";
 import { formatDate } from "@/lib/format";
+import { articleImage } from "@/lib/images";
 import { openGraphBase } from "@/lib/site";
 import { newsArticleJsonLd } from "@/lib/structured-data";
 
@@ -33,6 +34,7 @@ export async function generateMetadata({
   if (!article) return { title: "Story not found" };
 
   const canonical = `/news/${article.slug}`;
+  const image = articleImage(article);
 
   return {
     title: article.title,
@@ -43,7 +45,7 @@ export async function generateMetadata({
       title: article.title,
       description: article.dek,
       publishedTime: article.publishedAt,
-      images: article.image ? [{ url: article.image }] : undefined,
+      images: [{ url: image.src, alt: image.alt }],
     },
   };
 }

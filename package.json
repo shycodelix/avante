@@ -5,7 +5,9 @@
   "description": "Avante Esports — organisation site, creative studio portfolio and multi-title esports hub.",
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0 --port 3000",
+    "prebuild": "node scripts/check-images.mjs",
     "build": "next build",
+    "check:images": "node scripts/check-images.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },

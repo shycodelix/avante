@@ -1,4 +1,5 @@
 import type { Article } from "@/lib/types";
+import { articleImage } from "@/lib/images";
 import { absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/site";
 
 /**
@@ -6,11 +7,13 @@ import { absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/site";
  *
  * Every field is taken from the same source the canonical link and Open Graph
  * tags use, so the schema can never drift from the page metadata: `url` is the
- * canonical path, `headline`/`description` are the OG title/description, and
- * `datePublished` is the OG published time.
+ * canonical path, `headline`/`description` are the OG title/description,
+ * `datePublished` is the OG published time, and `image` is the picture the
+ * `og:image` tag advertises — the story's own photo, or the brand card.
  */
 export function newsArticleJsonLd(article: Article) {
   const canonical = `/news/${article.slug}`;
+  const image = articleImage(article);
 
   return {
     "@context": "https://schema.org",
@@ -24,9 +27,8 @@ export function newsArticleJsonLd(article: Article) {
     inLanguage: "en-PH",
     articleSection: article.category,
     ...(article.tags.length > 0 ? { keywords: article.tags.join(", ") } : {}),
-    ...(article.image
-      ? { image: [absoluteUrl(article.image)], thumbnailUrl: absoluteUrl(article.image) }
-      : {}),
+    image: [absoluteUrl(image.src)],
+    thumbnailUrl: absoluteUrl(image.src),
     author: {
       "@type": "Person",
       name: article.author.name,
