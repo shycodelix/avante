@@ -13,6 +13,7 @@ import {
 } from "@/lib/content";
 import { formatDate } from "@/lib/format";
 import { openGraphBase } from "@/lib/site";
+import { newsArticleJsonLd } from "@/lib/structured-data";
 
 export const revalidate = 300;
 
@@ -64,6 +65,13 @@ export default async function ArticlePage({
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        // `<` is escaped so a headline can never close the script early.
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(newsArticleJsonLd(article)).replace(/</g, "\\u003c"),
+        }}
+      />
       <header className="relative overflow-hidden border-b border-bone/10">
         <div className="grid-lines pointer-events-none absolute inset-0 opacity-30" aria-hidden />
         <div className="wrap relative py-10 md:py-14">

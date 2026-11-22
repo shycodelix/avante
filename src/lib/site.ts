@@ -12,6 +12,12 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://avanteesports.vercel.app"
 ).replace(/\/+$/, "");
 
+/** Absolute form of a site-relative path, for structured data. */
+export function absoluteUrl(path: string): string {
+  if (/^https?:\/\//.test(path)) return path;
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 /**
  * Canonical path for a route, carrying its filter state.
  *
